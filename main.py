@@ -1,12 +1,21 @@
-# Import necessary libraries
-from tkinter import *
+# Import Necessary Libraries
+import pygame  
+  
+# Initialize required modules
+pygame.init()  
 
-# Create Window
-window = Tk()
+# Setup window geometry
+screen = pygame.display.set_mode((400,500))  
 
-# Set the window Title and Geometry
-window.title('Demo Window')
-window.geometry('400x300')
+# Create a loop to run till the game is quit by the user
+done = False  
+  
+while not done: 
 
-# Start the GUI event loop
-window.mainloop()
+	# Clear the event queue
+	for event in pygame.event.get():  
+		if event.type == pygame.QUIT:  
+			pygame.quit()
+	
+	# Make the changes visible
+	pygame.display.flip()  
